@@ -1,7 +1,24 @@
 <form ng-submit="addQuest()">
-<div class="row" ng-repeat="quest in challenge.quests">
-    <div class="col-md-12">
-        <quest-step quest="quest" id="$index"></quest-step>
+<div class="row">
+    <div class="col-md-6">
+        <uib-accordion close-others="true">
+            <uib-accordion-group ng-repeat="quest in challenge.quests"
+            is-open="true">
+                <uib-accordion-heading>
+                    <!--<button class="btn btn-sm btn-danger pull-right">-->
+                        <!--<i class="glyphicon glyphicon-trash danger"></i>-->
+                        <!--Remove-->
+                    <!--</button>-->
+                    <span class="clearfix">Quest {{ $index + 1 }}</span>
+
+                </uib-accordion-heading>
+                <quest-step quest="quest"></quest-step>
+            </uib-accordion-group>
+        </uib-accordion>
+        <button type="submit" class="btn btn-default">Add Quest</button>
+    </div>
+    <div class="col-md-6">
+        <leaflet width="100%" height="400" defaults="map.defaults" markers="map.markers" center="map.center"></leaflet>
     </div>
 </div>
 </form>

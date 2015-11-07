@@ -5,26 +5,35 @@
         .controller('CreateController', function ($scope, API) {
             $scope.challenge = {};
 
-            $scope.challenge.quests = [{
-                lat: 59.91,
-                lon: 10.75
-            }];
+            $scope.map = {
+                center: {
+                    lat: 52.2721095,
+                    lng: 10.3878014,
+                    zoom: 6
+                },
+                defaults: {
+
+                },
+                markers: {}
+            };
+
+
+            $scope.challenge.quests = [{}];
             $scope.addQuest = function () {
                 $scope.challenge.quests.push({});
                 console.debug($scope.challenge.quests);
             };
 
-            $scope.$on('leafletDirectiveMarker.dragend', function (e, args) {
-                console.debug('adksapdja', e, args);
-                $scope.challenge.quests[0].lat = args.model.lat;
-                $scope.challenge.quests[0].lon = args.model.lng;
-
-            });
-
             $scope.$on('leafletDirectiveMap.click', function (e, args) {
-                console.debug(e, args);
-                $scope.challenge.quests[0].lat = args.leafletEvent.latlng.lat;
-                $scope.challenge.quests[0].lon = args.leafletEvent.latlng.lng;
+                console.debug(args);
+                var quest =$scope.challenge.quests[$scope.challenge.quests.length - 1];
+                quest.lon = args.leafletEvent.latlng.lng;
+                quest.lat = args.leafletEvent.latlng.lat;
+                $scope.map.markers['quest_' + $scope.challenge.quests.length] ={
+                    lng: quest.lon,
+                    lat: quest.lat
+                };
             })
+
         });
 })();
