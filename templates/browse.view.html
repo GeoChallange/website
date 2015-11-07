@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="list-group">
+      <a href="#/browse/{{c.challengeId }}" class="list-group-item" ng-repeat="c in challenges">
+        <h4 class="list-group-item-heading">{{ c.title }} - {{ c.startDate | date: 'dd.MM.yyyy'}}</h4>
+        <div class="list-group-item-text">
+          <p>{{ c.startLocationDescription }}</p>
+          <p>Number of participants: {{ c.numberOfParticipants }} <br/>
+            Minimum number of pariticipants: {{ c.minParticipants }}</p>
+          <p>Number of quests: {{ c.numberOfQuests }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

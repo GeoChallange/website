@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('app')
-        .controller('CreateController', function ($scope, API) {
+        .controller('CreateController', function ($scope, Challenge) {
             $scope.challenge = {};
 
             $scope.map = {

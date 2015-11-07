@@ -3,16 +3,21 @@
  */
 angular.module('app', ['ngRoute', 'ui.bootstrap', 'leaflet-directive'])
     .config(function ($routeProvider) {
-        $routeProvider.when('/', {
-                templateUrl: 'templates/index.view.html',
+        $routeProvider
+            .when('/browse', {
+                templateUrl: 'templates/browse.view.html',
                 controller: 'BrowseController'
+            })
+            .when('/browse/:id', {
+                templateUrl: 'templates/challenge.view.html',
+                controller: 'ChallengeController'
             })
             .when('/create', {
                 templateUrl: 'templates/create.view.html',
                 controller: 'CreateController'
             })
             .otherwise({
-                redirect: '/'
+                redirectTo: '/browse'
             })
     })
     .directive('questStep', function () {
