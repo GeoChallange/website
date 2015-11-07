@@ -6,7 +6,7 @@
         <p>Location: {{ challenge.startLocationDescription }}</p>
 
         <p> Date: {{challenge.startDate | date: 'dd.MM.yyyy'}}</p>
-
+        <p> Time: {{challenge.startDate | date: 'HH:mm'}}</p>
         <p>Number of participants: {{challenge.participants.length }}</p>
 
         <p>Minimal number of participants: {{challenge.minParticipants}}</p>
