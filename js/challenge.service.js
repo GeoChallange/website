@@ -8,8 +8,8 @@ angular.module('app')
         _self.query = function () {
             var deferred = $q.defer();
 
-            $http.get('browse.json')
-                //$http.get('http://10.41.0.1:8080/challenge')
+            //$http.get('browse.json')
+                $http.get(URL + '/challenge')
                 .success(function (data) {
                     deferred.resolve(data);
                 })
@@ -21,7 +21,7 @@ angular.module('app')
 
         _self.get = function (id) {
             var deferred = $q.defer();
-            $http.get('challenge.json').success(function (data) {
+            $http.get(URL + '/challenge/' + id).success(function (data) {
                 deferred.resolve(data);
             }).error(function () {
                 deferred.reject(null);

@@ -50,9 +50,9 @@
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">
-                    Estimated time in min:
+                    Estimated time
                 </div>
-                <input type="number" class="form-control" pattern="[1-9]+{1,3}" required ng-model="challenge.approxDuration">
+                <input type="text" class="form-control" required ng-model="challenge.approxDuration">
             </div>
         </div>
     </div>
@@ -70,18 +70,20 @@
                     <!--</button>-->
                     <span class="clearfix">Quest {{ $index + 1 }}</span>
 
-                </uib-accordion-heading>
-                <quest-step quest="quest"></quest-step>
-            </uib-accordion-group>
-        </uib-accordion>
-        <button type="button" ng-click="addQuest()" class="btn btn-default">Add Quest</button>
+                    </uib-accordion-heading>
+                    <quest-step quest="quest"></quest-step>
+                </uib-accordion-group>
+            </uib-accordion>
+            <button type="button" ng-click="addQuest()" class="btn btn-default">Add Quest</button>
+        </div>
+        <div class="col-md-6">
+            <div map>
+                <leaflet width="100%" height="400" defaults="map.defaults" markers="map.markers"
+                         center="map.center"></leaflet>
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-        <leaflet width="100%" height="400" defaults="map.defaults" markers="map.markers"
-                 center="map.center"></leaflet>
-    </div>
-</div>
-    <div class="row">
+    <div class="row" style="padding-top:20px">
         <div class="col-md-12">
             <button type="submit" class="btn btn-primary">Create challenge</button>
         </div>
