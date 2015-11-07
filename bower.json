@@ -21,6 +21,7 @@
     "angular-route": "~1.4.7",
     "angular-bootstrap": "~0.14.3",
     "bootswatch": "~3.3.5+4",
-    "angular-leaflet-directive": "~0.10.0"
+    "angular-leaflet-directive": "~0.10.0",
+    "leaflet": "~0.7.7"
   }
 }

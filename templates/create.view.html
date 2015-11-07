@@ -1,5 +1,7 @@
-<div class="row">
+<form ng-submit="addQuest()">
+<div class="row" ng-repeat="quest in challenge.quests">
     <div class="col-md-12">
-        <leaflet></leaflet>
+        <quest-step quest="quest" id="$index"></quest-step>
     </div>
 </div>
+</form>
