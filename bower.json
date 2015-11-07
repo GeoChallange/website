@@ -1,0 +1,25 @@
+{
+  "name": "gc_website",
+  "homepage": "https://github.com/GeoChallenge/gc_website",
+  "authors": [
+    "Arne <git@arnefeil.de>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-bootstrap": "~0.14.3",
+    "bootswatch": "~3.3.5+4"
+  }
+}

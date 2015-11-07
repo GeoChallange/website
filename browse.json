@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Challenge 1",
+    "challengeId": "challenge_1",
+    "startLocationDescription": "pasokdaosjdaopd ash daoisjd",
+    "startDate": "2015-11-06T20:39:00.485Z",
+    "approxDuration" : "5h",
+    "minPartipticants": 10,
+    "finishedBy": "12345"
+  },
+  {
+    "title": "Challenge 1",
+    "challengeId": "challenge_1",
+    "startLocationDescription": "pasokdaosjdaopd ash daoisjd",
+    "startDate": "2015-11-06T20:39:00.485Z",
+    "approxDuration" : "5h",
+    "minPartipticants": 10,
+    "finishedBy": null
+  }
+]
