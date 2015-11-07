@@ -3,7 +3,7 @@
         <div class="input-group-addon">
             Question:
         </div>
-        <input type="text" class="form-control" required ng-model="quest.question">
+        <input type="text" class="form-control" ng-model="quest.question">
     </div>
 
 </div>
@@ -12,7 +12,7 @@
         <div class="input-group-addon">
             Answer:
         </div>
-        <input type="text" class="form-control" required ng-model="quest.answer">
+        <input type="text" class="form-control" ng-model="quest.answer">
     </div>
 
 </div>
@@ -21,7 +21,7 @@
         <div class="input-group">
             <div class="input-group-addon">Lon:</div>
             <input type="text" pattern="[0-9]{1,3}\.[0-9]+" class="form-control"
-                   required ng-model="quest.lon">
+                   readonly ng-model="quest.lon">
         </div>
     </div>
     <div class="col-xs-6">
@@ -30,7 +30,7 @@
                 Lat:
             </div>
             <input type="text" pattern="[0-9]{1,3}\.[0-9]+" class="form-control"
-                   required ng-model="quest.lat">
+                   readonly ng-model="quest.lat">
         </div>
     </div>
 </div>

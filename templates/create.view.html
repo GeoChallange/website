@@ -1,3 +1,4 @@
+<form ng-submit="addChallenge()">
 <div class="row">
     <div class="col-md-12">
         <h3>Formal</h3>
@@ -8,7 +9,7 @@
                 <div class="input-group-addon">
                     Challengename:
                 </div>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" required ng-model="challenge.title">
             </div>
 
         </div>
@@ -18,34 +19,31 @@
                 <div class="input-group-addon">
                     Startpoint
                 </div>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" required ng-model="challenge.startLocationDescription">
             </div>
 
         </div>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">
-                    Date
+                    Start time
                 </div>
-                <input type="text" class="form-control"/>
-                <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-
-                        </span>
+                <input type="text" class="form-control"
+                       datetime-picker="dd.MM.yyyy HH:mm" ng-model="challenge.startDate"
+                       is-open="showDatePicker" required>
+                <span class="input-group-addon" ng-click="showDatePicker = !showDatePicker">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                </span>
             </div>
-
         </div>
-
 
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">
                     Minimum Participians
                 </div>
-                <input type="number" class="form-control bfh-number">
-
+                <input type="number" class="form-control bfh-number" required ng-model="challenge.minParticipants">
             </div>
-
         </div>
 
 
@@ -54,39 +52,38 @@
                 <div class="input-group-addon">
                     Estimated time
                 </div>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" required ng-model="challenge.approxDuration">
             </div>
-
         </div>
-
-
     </div>
-
-
 </div>
 
-<form ng-submit="addQuest()">
-    <div class="row">
-        <div class="col-md-6">
-            <uib-accordion close-others="true">
-                <uib-accordion-group ng-repeat="quest in challenge.quests"
-                                     is-open="true">
-                    <uib-accordion-heading>
-                        <!--<button class="btn btn-sm btn-danger pull-right">-->
-                        <!--<i class="glyphicon glyphicon-trash danger"></i>-->
-                        <!--Remove-->
-                        <!--</button>-->
-                        <span class="clearfix">Quest {{ $index + 1 }}</span>
+<div class="row">
+    <div class="col-md-6">
+        <uib-accordion close-others="true">
+            <uib-accordion-group ng-repeat="quest in challenge.quests"
+                                 is-open="true">
+                <uib-accordion-heading>
+                    <!--<button class="btn btn-sm btn-danger pull-right">-->
+                    <!--<i class="glyphicon glyphicon-trash danger"></i>-->
+                    <!--Remove-->
+                    <!--</button>-->
+                    <span class="clearfix">Quest {{ $index + 1 }}</span>
 
-                    </uib-accordion-heading>
-                    <quest-step quest="quest"></quest-step>
-                </uib-accordion-group>
-            </uib-accordion>
-            <button type="submit" class="btn btn-default">Add Quest</button>
-        </div>
-        <div class="col-md-6">
-            <leaflet width="100%" height="400" defaults="map.defaults" markers="map.markers"
-                     center="map.center"></leaflet>
+                </uib-accordion-heading>
+                <quest-step quest="quest"></quest-step>
+            </uib-accordion-group>
+        </uib-accordion>
+        <button type="button" ng-click="addQuest()" class="btn btn-default">Add Quest</button>
+    </div>
+    <div class="col-md-6">
+        <leaflet width="100%" height="400" defaults="map.defaults" markers="map.markers"
+                 center="map.center"></leaflet>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Create challenge</button>
         </div>
     </div>
 </form>
