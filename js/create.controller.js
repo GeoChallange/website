@@ -2,7 +2,8 @@
     'use strict';
 
     angular.module('app')
-        .controller('CreateController', function ($scope, $location, Challenge, Dialog) {
+        .controller('CreateController', function ($rootScope, $scope, $location, Challenge, Dialog) {
+            $rootScope.navbarCollapse = true;
             $scope.challenge = {};
 
             $scope.map = {
@@ -32,7 +33,7 @@
                     Dialog.alert({ title: 'Challenge created', body: 'Your challenge was created!'})
                         .result.then(function () {
                         $location.path('/');
-                    })
+                    });
                     //console.debug(success);
                 }, function(err) {
                     console.debug(err);

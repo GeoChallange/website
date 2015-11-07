@@ -1,7 +1,7 @@
 /**
  * Created by HelmutCarmen on 06.11.2015.
  */
-angular.module('app', ['ngRoute', 'ui.bootstrap', 'ui.bootstrap.datetimepicker', 'leaflet-directive'])
+angular.module('app', ['ngRoute', 'ui.bootstrap', 'ui.bootstrap.datetimepicker', 'leaflet-directive', 'ngStorage'])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/browse', {
@@ -53,5 +53,12 @@ angular.module('app', ['ngRoute', 'ui.bootstrap', 'ui.bootstrap.datetimepicker',
             });
             setMap(scope,element,attrs);
         };
+    })
+    .run(function ($rootScope, $localStorage) {
+        $rootScope.globals = $localStorage;
+        if (!$rootScope.globals.userId) {
+            $rootScope.globals.userId = ''+Math.floor(Math.random() * 100000);
+        }
+
     })
     .value('URL', 'http://192.168.0.105:8080');

@@ -1,7 +1,8 @@
 angular.module('app')
 .controller('BrowseController', function ($rootScope, $scope, $location, Challenge) {
+  $rootScope.navbarCollapse = true;
   Challenge.query().then(function (data) {
-    $rootScope.navbarCollapse = true;
+
     console.log(data);
     $rootScope.challenges = data;
 
