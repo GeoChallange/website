@@ -1,6 +1,19 @@
 <div class="row">
     <div class="col-md-12">
+
         <h2>{{ challenge.title }}</h2>
-        <p>{{ challenge.startLocationDescription }}</p>
+
+        <p>Location: {{ challenge.startLocationDescription }}</p>
+
+        <p> Date: {{challenge.startDate | date: 'dd.MM.yyyy'}}</p>
+
+        <p>Number of participants: {{challenge.numberOfParticipants }}</p>
+
+        <p>Minimal number of participants: {{challenge.minParticipants}}</p>
+
+        <p>Approx duration: {{challenge.approxDuration}} </p>
+
+
+        <button type="button" class="btn btn-default">Join</button>
     </div>
 </div>
