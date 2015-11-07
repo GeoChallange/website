@@ -12,9 +12,7 @@
                     lng: 10.3878014,
                     zoom: 6
                 },
-                defaults: {
-
-                },
+                defaults: { },
                 markers: {}
             };
 

@@ -24,6 +24,7 @@
     "angular-leaflet-directive": "~0.10.0",
     "leaflet": "~0.7.7",
     "bootstrap-ui-datetime-picker": "~2.0.1",
-    "ngstorage": "~0.3.9"
+    "ngstorage": "~0.3.9",
+    "angular-animate": "~1.4.7"
   }
 }

@@ -1,7 +1,7 @@
 /**
  * Created by HelmutCarmen on 06.11.2015.
  */
-angular.module('app', ['ngRoute', 'ui.bootstrap', 'ui.bootstrap.datetimepicker', 'leaflet-directive', 'ngStorage'])
+angular.module('app', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ui.bootstrap.datetimepicker', 'leaflet-directive', 'ngStorage'])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/browse', {
