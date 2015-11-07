@@ -1,15 +1,54 @@
 <div class="row">
-  <div class="col-md-6">
-    <div class="list-group">
-      <a href="#/browse/{{c._id }}" class="list-group-item" ng-repeat="c in challenges">
-        <h4 class="list-group-item-heading">{{ c.title }} - {{ c.startDate | date: 'dd.MM.yyyy'}}</h4>
-        <div class="list-group-item-text">
-          <p>{{ c.startLocationDescription }}</p>
-          <p>Number of participants: {{ c.numberOfParticipants }} <br/>
-            Minimum number of pariticipants: {{ c.minParticipants }}</p>
-          <p>Number of quests: {{ c.numberOfQuests }}</p>
+    <!--<div class="col-md-6">-->
+    <!--<div class="list-group">-->
+    <!--<a href="#/browse/{{c._id }}" class="list-group-item" ng-repeat="c in challenges | orderBy: 'startDate'">-->
+    <!--<h4 class="list-group-item-heading">{{ c.title }} - {{ c.startDate | date: 'dd.MM.yyyy'}}</h4>-->
+    <!--<div class="list-group-item-text">-->
+    <!--<p>{{ c.startLocationDescription }}</p>-->
+    <!--<p>Number of participants: {{ c.numberOfParticipants }} <br/>-->
+    <!--Minimum number of pariticipants: {{ c.minParticipants }}</p>-->
+    <!--<p>Number of quests: {{ c.numberOfQuests }}</p>-->
+    <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th><a href ng-click="orderBy('title')">
+                        Title
+                        <i ng-if="showFilterIcon('title')" ng-class="filterIconClass()"></i>
+                    </a></th>
+                    <th><a href ng-click="orderBy('startDate')">
+                        Date
+                        <i ng-if="showFilterIcon('startDate')" ng-class="filterIconClass()"></i>
+                    </a></th>
+                    <th><a href ng-click="orderBy('startLocationDescription')">
+                        Location
+                        <i ng-if="showFilterIcon('startLocationDescription')" ng-class="filterIconClass()"></i>
+                    </a></th>
+                    <th><a href ng-click="orderBy('numberOfQuests')">
+                        Quests
+                        <i ng-if="showFilterIcon('numberOfQuests')" ng-class="filterIconClass()"></i>
+                    </a></th>
+                    <th><a href ng-click="orderBy('minParticipants')">
+                        Participants
+                        <i ng-if="showFilterIcon('minParticipants')" ng-class="filterIconClass()"></i>
+                    </a></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="c in challenges | orderBy: filter" ng-click="open(c._id)">
+                    <td>{{ c.title }}</td>
+                    <td>{{ c.startDate | date: 'dd.MM.yyyy - HH:mm'}}</td>
+                    <td>{{ c.startLocationDescription }}</td>
+                    <td>{{ c.numberOfQuests }}</td>
+                    <td>{{ c.numberOfParticipants }}/{{ c.minParticipants }}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-      </a>
     </div>
-  </div>
 </div>
