@@ -6,6 +6,7 @@
             Challenge.get($routeParams.id).then(function (challenge) {
                 $rootScope.navbarCollapse = true;
                 $scope.challenge = challenge;
+                console.debug(challenge);
             });
             $rootScope.selected = null;
 

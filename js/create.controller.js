@@ -28,7 +28,11 @@
 
             $scope.addChallenge = function () {
                 console.debug($scope.challenge);
-                //Challenge.save($scope.challenge);
+                Challenge.save($scope.challenge).then(function (success) {
+                    console.debug(success);
+                }, function(err) {
+                    console.debug(err);
+                });
             };
 
             $scope.$on('leafletDirectiveMap.click', function (e, args) {

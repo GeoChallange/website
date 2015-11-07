@@ -38,13 +38,11 @@ angular.module('app', ['ngRoute', 'ui.bootstrap', 'ui.bootstrap.datetimepicker',
                 element.css('top', '80px');
                 element.css('left', '50%');
                 element.css('width', element.parent()[0].offsetWidth + 'px');
-                element.css('padding-bottom', '0');
             } else {
                 element.css('position', 'relative');
                 element.css('top', '0');
                 element.css('left', '0');
                 element.css('width', 'auto');
-                element.css('padding-bottom', '20px');
             }
         };
         return function (scope, element, attrs) {
@@ -56,4 +54,4 @@ angular.module('app', ['ngRoute', 'ui.bootstrap', 'ui.bootstrap.datetimepicker',
             setMap(scope,element,attrs);
         };
     })
-    .value('URL', 'http://x.x.x.x:8080');
+    .value('URL', 'http://192.168.0.105:8080');
