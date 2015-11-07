@@ -20,8 +20,15 @@
 
             $scope.challenge.quests = [{}];
             $scope.addQuest = function () {
-                $scope.challenge.quests.push({});
-                console.debug($scope.challenge.quests);
+                var quest = $scope.challenge.quests[$scope.challenge.quests.length - 1];
+                if (quest.lat && quest.lon && quest.question && quest.answer) {
+                    $scope.challenge.quests.push({});
+                }
+            };
+
+            $scope.addChallenge = function () {
+                console.debug($scope.challenge);
+                //Challenge.save($scope.challenge);
             };
 
             $scope.$on('leafletDirectiveMap.click', function (e, args) {
@@ -31,9 +38,11 @@
                 quest.lat = args.leafletEvent.latlng.lat;
                 $scope.map.markers['quest_' + $scope.challenge.quests.length] ={
                     lng: quest.lon,
-                    lat: quest.lat
+                    lat: quest.lat,
+                    focus: true,
+                    message: 'Quest ' + $scope.challenge.quests.length
                 };
-            })
+            });
 
         });
 })();
