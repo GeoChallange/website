@@ -50,9 +50,9 @@
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">
-                    Estimated time
+                    Estimated time in min:
                 </div>
-                <input type="text" class="form-control" required ng-model="challenge.approxDuration">
+                <input type="number" class="form-control" pattern="[1-9]+" required ng-model="challenge.approxDuration">
             </div>
         </div>
     </div>
