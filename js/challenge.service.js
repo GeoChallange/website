@@ -9,7 +9,7 @@ angular.module('app')
             var deferred = $q.defer();
 
             //$http.get('browse.json')
-                $http.get(URL + '/challenge')
+            $http.get(URL + '/challenge')
                 .success(function (data) {
                     deferred.resolve(data);
                 })
@@ -32,6 +32,18 @@ angular.module('app')
         _self.save = function (challenge) {
             var deferred = $q.defer();
             $http.post(URL + '/challenge', challenge)
+                .success(function (data) {
+                    deferred.resolve(data);
+                })
+                .error(function (err) {
+                    deferred.reject(err);
+                });
+            return deferred.promise;
+        };
+
+        _self.join = function (challengeId, userId) {
+            var deferred = $q.defer();
+            $http.put(URL + '/challenge/' + challengeId, {userId: userId})
                 .success(function (data) {
                     deferred.resolve(data);
                 })

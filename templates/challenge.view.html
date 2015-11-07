@@ -7,13 +7,13 @@
 
         <p> Date: {{challenge.startDate | date: 'dd.MM.yyyy'}}</p>
 
-        <p>Number of participants: {{challenge.numberOfParticipants }}</p>
+        <p>Number of participants: {{challenge.participants.length }}</p>
 
         <p>Minimal number of participants: {{challenge.minParticipants}}</p>
 
         <p>Approx duration: {{challenge.approxDuration}} </p>
 
 
-        <button type="button" class="btn btn-default">Join</button>
+        <button type="button" ng-hide="hideButton" ng-click="join()" class="btn btn-default">Join</button>
     </div>
 </div>
