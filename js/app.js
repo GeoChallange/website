@@ -16,6 +16,7 @@ angular.module('app', ['ngRoute', 'ui.bootstrap', 'leaflet-directive'])
             })
     })
     .directive('questStep', function () {
+
         return {
             templateUrl: 'templates/quest.view.html',
             scope: {
