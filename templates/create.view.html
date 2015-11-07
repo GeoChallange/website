@@ -17,7 +17,7 @@
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">
-                    Startpoint
+                    Startpoint:
                 </div>
                 <input type="text" class="form-control" required ng-model="challenge.startLocationDescription">
             </div>
@@ -26,7 +26,7 @@
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">
-                    Start time
+                    Start time:
                 </div>
                 <input type="text" class="form-control"
                        datetime-picker="dd.MM.yyyy HH:mm" ng-model="challenge.startDate"
@@ -40,7 +40,7 @@
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">
-                    Minimum Participians
+                    Minimum number of participants:
                 </div>
                 <input type="number" class="form-control" required ng-model="challenge.minParticipants" pattern="[1-9]+">
             </div>
@@ -50,9 +50,9 @@
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon">
-                    Estimated time
+                    Estimated time in min:
                 </div>
-                <input type="text" class="form-control" required ng-model="challenge.approxDuration">
+                <input type="number" class="form-control" pattern="[1-9]+{1,3}" required ng-model="challenge.approxDuration">
             </div>
         </div>
     </div>
