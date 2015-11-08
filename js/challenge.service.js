@@ -42,12 +42,15 @@ angular.module('app')
         };
 
         _self.join = function (challengeId, userId) {
+            console.log('service', challengeId, userId);
             var deferred = $q.defer();
-            $http.put(URL + '/challenge/' + challengeId, {userId: userId})
+            $http.put(URL + '/challenge/' + challengeId, { userId: userId })
                 .success(function (data) {
+                    console.debug(data);
                     deferred.resolve(data);
                 })
                 .error(function (err) {
+                    console.debug(err);
                     deferred.reject(err);
                 });
             return deferred.promise;

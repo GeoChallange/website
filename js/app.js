@@ -61,4 +61,5 @@ angular.module('app', ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'ui.bootstrap.dat
         }
 
     })
-    .value('URL', 'http://192.168.0.105:8080');
+    .value('URL', 'https://geochallengeone.herokuapp.com');
+    //.value('URL', 'http://192.168.0.105:8080');
