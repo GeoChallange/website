@@ -37,6 +37,10 @@
                         Participants
                         <i ng-if="showFilterIcon('minParticipants')" ng-class="filterIconClass()"></i>
                     </a></th>
+                    <th><a href ng-click="orderBy('price')">
+                        Price
+                        <i ng-if="showFilterIcon('price')" ng-class="filterIconClass()"></i>
+                    </a></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,6 +50,7 @@
                     <td>{{ c.startLocationDescription }}</td>
                     <td>{{ c.numberOfQuests }}</td>
                     <td>{{ c.numberOfParticipants }}/{{ c.minParticipants }}</td>
+                    <td>{{ c.price }}</td>
                 </tr>
                 </tbody>
             </table>
