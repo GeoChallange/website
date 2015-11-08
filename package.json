@@ -1,8 +1,8 @@
-{ 
-"name": "GeoChallenge",
-"version": "0.0.1",
-"description":"",
-"dependencies": {
-	"harp":"*"
-}
+{
+  "name": "GeoChallenge",
+  "version": "0.0.1",
+  "description": "",
+  "dependencies": {
+    "express": "~4.13.3"
+  }
 }
