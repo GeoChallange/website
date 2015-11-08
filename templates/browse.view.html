@@ -41,6 +41,10 @@
                         Price
                         <i ng-if="showFilterIcon('price')" ng-class="filterIconClass()"></i>
                     </a></th>
+                    <th><a href ng-click="orderBy('winnings')">
+                        Winnings
+                        <i ng-if="showFilterIcon('winnings')" ng-class="filterIconClass()"></i>
+                    </a></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -51,6 +55,7 @@
                     <td>{{ c.numberOfQuests }}</td>
                     <td>{{ c.numberOfParticipants }}/{{ c.minParticipants }}</td>
                     <td>{{ c.price }}</td>
+                    <td>{{ c.winnings }}</td>
                 </tr>
                 </tbody>
             </table>
